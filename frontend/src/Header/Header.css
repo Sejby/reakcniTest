@@ -1,0 +1,11 @@
+header{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    box-shadow: 1px inset solid black;
+    border-bottom: 1px solid black;
+}
+
+header h1{
+    font-size: 25px;
+}

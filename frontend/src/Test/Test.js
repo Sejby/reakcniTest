@@ -2,28 +2,21 @@ import React, { useState } from "react";
 import './Test.css'
 
 function Test() {
-  const [startTime, setStartTime] = useState()
-  const [endTime, setEndTime] = useState()
+  let [startTime, setStartTime] = useState(0)
+  let [endTime, setEndTime] = useState()
   const [reakcniCas, setReakcniCas] = useState()
 
-    function vypoctiReakcniCas(e){
-      e.preventDefault()
-      console.log("KLik");
-      
-      if (startTime === undefined) {
-        setStartTime(new Date())
-      }
-      else if (startTime !== undefined && endTime === undefined) {
-        setEndTime(new Date())
-      }
-      else if (startTime !== undefined && endTime !== undefined) {
-        setReakcniCas(endTime - startTime)
-        setStartTime(undefined)
-        setEndTime(undefined)
-        console.log(reakcniCas)
-      }
-      
-    }
+  useEffect(() => {
+    setStartTime(setInterval(() => {
+      startTime++
+    }, 1000))
+    console.log(startTime)
+
+  }, [startTime])
+
+  const vypoctiReakcniCas = (e) => {
+
+  }
 
   return (
     <div id="test" onClick={vypoctiReakcniCas}>
